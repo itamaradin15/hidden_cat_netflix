@@ -1,1 +1,1 @@
-#Listado de categorias ocultas de netflix desarrollado en django
+Listado de categorias ocultas de netflix desarrollado en django
