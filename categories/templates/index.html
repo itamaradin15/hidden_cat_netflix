@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Categorias ocultas de Netflix - Ver peliculas por categorias</title>
+    <meta name="description"  content="Puedes acceder a las categorias ocultas de Netflix, te mostramos cómo entrar a las categorías ocultas de Netflix">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    {% load static %}
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/scribbler-global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/scribbler-landing.css' %}">
+    <link rel="author" href="humans.txt">
+</head>
+<body>
+<nav>
+    <div class="logo"></div>
+    <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+    </ul>
+</nav>
+<div class="hero">
+    <h1 class="hero__title">Categorias ocultas de Netflix</h1>
+    <p class="hero__description">Puedes ver las peliculas de Netflix por categorias dando click en algunos de los siguientes enlaces</p>
+</div>
+<div class="wrapper">
+    <div class="feature">
+        {% for type in types %}
+        <div class="feature__item">
+            <h3 class="section__title">{{type.name}}</h3>
+            <ul>
+                {% for category in type.category_set.all %}
+                    <li>
+                        <a target="_blank" href="https://www.netflix.com/browse/genre/{{category.code}}">
+                            {{category.name}}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="changelog">
+    <div class="wrapper">
+
+    </div>
+</div>
+<footer class="footer">Categorias ocultas de Netflix is a free HTML template created exclusively for <a
+        href="https://tympanus.net/codrops/" target="_blank" class="link link--light">Codrops</a>.
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+</body>
+</html>
